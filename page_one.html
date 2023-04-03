@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intensity Interferometry</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    
+
+    <header class="flux-calculation using-dl" id="using-dl">
+        <nav class="navigate-to other page">
+          
+          <ul>
+              <li><a href="page_one.html#introduction">Interferometry +</a>
+                  <ul>
+                      <li><a href="#introduction">Introduction</a>
+                      <li><a href="#history">History</a></li>
+                      <li><a href="#experiments">Experiments</a></li>
+                      <li><a href="#instument-and-process">Instruments and procedure</a></li>
+                      <li><a href="#experiments">Experiments</a></li>
+                  </ul>
+              </li>
+              
+              <li><a href="#dl_corr">Deep Learning +</a>
+                  <ul>
+                      <li><a href="page_two.html#motivation2">Motivation</a></li>
+                      <li><a href="page_two.html#ele_nn">Elements of NN</a></li>
+                      <li><a href="page_two.html#nns">NN types +</a>
+                          <ul>
+                              <li><a href="page_two.html#fully">FCNN</a></li>
+                              <li><a href="page_two.html#cnn">CNN</a></li>
+                              <li><a href="page_two.html#lstm">LSTM</a></li>
+                          </ul>
+                      </li>
+                      
+                  </ul>
+              </li>
+              <li><a href="page_three.html#test">Test</a>
+              <li><a href="page_three.html#contact">Contact</a>
+          </ul>
+  
+      </nav>
+  </header>
+
+    
+
+  
+    <section class="intensity_int" id="intensity_int">
+        
+        
+        <div class="motivation1">
+            <h1>Flux calculation from PMT using Deep Learning</h1>
+            <h2>Intensity Interferometry</h2>
+            <h3>Motivation</h3>
+            <p class="motivation" id="motivation">Our understanding of stars comes from high angular resolution results from star’s light
+                spectrum and variability, for which several attempts are done utilizing many advanced
+                optical instruments including extremely large telescopes. The highest resolution so far is
+                obtained by amplitude interferometers, with very long baseline, which are prefered to
+                be operated in the near infrared since atmospheric turbulence have less effect on longer
+                wavelengths. However, they are constrained by atmospheric turbulance. Intensity interferometry, an alternative approach to amplitude interferometry, is a method to achive higher
+                angular resolution without results being affected by atmospheric turbulence
+            </p>
+
+            <h2 >Brief history and early development</h2>
+            <p class="history" id="history">
+                Measuring the angular diameter of is 400 years old problem. Galileo measured distance
+        to the Vega and placed an upper limit on its angular size, by mentioning in his report
+        the angular size of Vega as 5 arc-second with consideration of atmospheric scintillation.
+        Newton also measured the angular size of stars and estimated angular size(upper bound)
+        of Vega to be 2 miliarcseconds(mas), which is very close to actual angular size. By the late
+        1800 it was realized that the maximum angular resolution of around 1 miliarcsecond is
+        determined by the atmospheric turbulence, instead of by the size of the aperture.
+            </p>
+
+            <p class="history1" id="history1">
+                Around 1874, M. Stephan implemented this
+        experiment with 80 cm telescope, and saw generated fringes in the stellar observation, and
+        provided angular resolution upper limit by an order of 0.16 arc-seconds for stars. Later on,
+        Michelson and Pease, in 1920, at Mt. Wilson had performed first successful measurement
+        of angular diameter of star, which is considered as birth of high resolution astronomy[1].
+        With 36” telescope, Michelson measured the angular diameter of Jupiter’s Galilean moons.
+        In 1920, they also measured angular diameter of the Berelgeuse(47 mas) with 6m of interferometer baseline[1]. In the preliminary experiments of Michelson, he noticed the drift in
+        fringes, which occurred due to atmospheric turbulence effects, inducing path difference
+        between two beams. Michelson measured this drift time scale as of order of milliseconds.
+        In 1930, Pease developed 15m version of their previous imterferometer, but unfortunately
+        the experiment failed to provide convincing results and indicated for the need of very
+        high precision optics, and then was abandoned. Later on, it took around 30 years for next
+        breakthrough in optical interferometry.
+            </p>
+
+            <p class="history2" id="history2">
+                First attempt to investigate coherence theory, was by Verdet in 1865, who measured
+        coherence(transverse) length of sun as 0.1mm by measuring angular diameter of sun[2].
+        The crucial time for the development of coherence theory was in between 1920 and 1960.
+        In this duration several notorious scientists, such as, Hopkins, Wolf, Weiner, Van Cittert,
+        Zernike, have investigated and outcome of their efforts was quantification of correlation
+        between space-time fluctuations and degree of coherence, which is obtained by Fourier
+        transform of radiant distribution of star, which is known as Cittert-Zernicke theorem, and
+        was first applied in radio astronomy by M.Ryle in 1952[3]. By the time radio interferometry
+        had implemented modern techniques and improved understanding of coherence theory,
+        which gave boost for development of intensity interferometry, and provided most highest
+        angular resolution images till today.
+            </p>
+        </div>
+    </section>
+
+
+    <section class="diff_exp types" id="diff_exp">
+        <h2>Different experiments</h2>
+        <div class="experiments" id="experiments">
+            <ul>
+                <li>Imaging Air Cherenkov telescopes
+                    <ol>
+                        <li>High Energy Stereoscopic System</li>
+                        <li>Cherenkov Telescope Array(CTA)
+                            <ul>
+                                <li>CTA-north</li>
+                                <li>CTA-south</li>
+                            </ul>
+                        </li>
+                        <li>MAGIC(Major Atmospheric Gamma Imaging Cherenkov Telescopes)</li>
+                        <li>VERITAS (Very Energetic Radiation Imaging Telescope Array System)</li>
+                    </ol>
+                </li>
+                <li>SKA (Square Kilometer Array)</li>
+                <li>VLT (Very Large Telescope)</li>
+            </ul>
+        </div>
+        <a href="https://www.manmonthly.com.au/news/square-kilometre-array-project-prospect-australian-businesses/" class="veritas_link" id="veritas_link"> Source</a>
+    </section>
+
+    <section class="instument-and procedure" id="instument-and-process">
+        <div class="intst" id="inst">
+            <h3>Instruments</h3>
+            <ul>
+                <li>two telescopes</li>
+                <li>optical filters</li>
+                <li>LED</li>
+                <li>beam splitter</li>
+                <li>two pmts</li>
+                <li>amplifiers</li>
+                <li>internet</li>
+                <li>optical guide</li>
+                <li>telescope mounts</li>
+                <li>computer</li>
+                <li>python</li>
+            </ul>
+        </div>
+
+        <div class="proce" id="proce">
+            <h3>Procedure</h3>
+            <ol>
+                <li>Laboratory experiment
+                    <ul>
+                        <li>Attach gray filter at PMTs</li>
+                        <li>Mount beam splitter</li>
+                        <li> Adjust PMTs at right angles</li>
+                        <li> Use LED as point source</li>
+                    </ul>
+                </li>
+                <li>Roof-top experiment
+                    <ul>
+                        <li>Establish telescopes on mounts and keep around 2m distance</li>
+                        <li>Attach pmts and calibrate telescopes</li>
+                        <li>Direct telescope towards desired star</li>
+                    </ul>
+                </li>
+                <li>Turn on the devices carefully and perform calibration</li>
+                <li>Using python plot flux from LED/star at nm scale</li>
+            </ol>
+
+        </div>
+    </section>
+
+    <section class="ecap_web" id="ecap_web">
+        <h1>Research center where we have done several experiments</h1>
+        <iframe id="map" src="https://ecap.nat.fau.de/" width="1500" height="500"></iframe>
+    </section>
+
+    <footer class="footer1">
+        <h2>References</h2>
+        <ol>
+
+            <li><p>
+                <a href="https://ecap.nat.fau.de/wp-content/uploads/2022/03/2021_Bhanderi_MA_thesis.pdf" target="_blank" rel="noopener" aria-label="Measurement of the diameter of orionis with the interferometer">
+                    F. G. Michelson A. A. ; Pease, ‘Measurement of the diameter of orionis with the interferometer.’, Astrophysical Journal,, vol. 53, pp. 249–259, 1921.
+                    </a>
+                </p>
+            </li>
+
+            <li><p>
+                <a href="https://ecap.nat.fau.de/wp-content/uploads/2022/03/2021_Bhanderi_MA_thesis.pdf" target="_blank" rel="noopener" aria-label="Optical Coherence and Quantum Optics">
+                    E. W. Leonard Mandel, Optical Coherence and Quantum Optics. 1995, pp. 0–839, isbn: 9781139644105.
+                    </a>
+                </p>
+            </li>
+
+            <li><p>
+                M. Ryle, ‘The application of interferometric methods in radio astronomy’, Vistas in Astronomy, vol. 1,
+pp. 532–541, 1955, issn: 0083-6656.
+                <a href="https://doi.org/https://doi.org/10.1016/0083-6656(55)90067-2" target="_blank" rel="noopener" aria-label="Optical Coherence and Quantum Optics">
+                    : https://doi.org/10.1016/0083- 6656(55)90067- 2. [Online]
+                    </a>
+                    <a href="https://www.sciencedirect.com/science/article/pii/0083665655900672" target="_blank" rel="noopener" aria-label="Optical Coherence and Quantum Optics">
+                        Available: https://www.sciencedirect.com/science/article/pii/0083665655900672.
+                        </a>
+                </p>
+            </li>
+            
+        </ol>
+       
+        <p>Copyright © Intensity Interferometry 2023</p>
+    </footer>
+
+
+
+
+
+    
+    
+    
+    
+
+
+</body>
+</html>

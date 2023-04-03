@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neural Network</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <header class="flux-calculation using-dl" id="using-dl">
+
+          <nav class="navigate-to other page">
+           
+            <ul>
+                <li><a href="page_one.html#introduction">Interferometry +</a>
+                    <ul>
+                        <li><a href="page_one.html#introduction">Introduction</a>
+                        <li><a href="page_one.html#history">History</a></li>
+                        <li><a href="page_one.html#experiments">Experiments</a></li>
+                        <li><a href="page_one.html#instument-and-process">Instruments and procedure</a></li>
+                        <li><a href="page_one.html#experiments">Experiments</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="#dl_corr">Deep Learning +</a>
+                    <ul>
+                        <li><a href="#motivation2">Motivation</a></li>
+                        <li><a href="#ele_nn">Elements of NN</a></li>
+                        <li><a href="#nns">NN types +</a>
+                            <ul>
+                                <li><a href="#fully">FCNN</a></li>
+                                <li><a href="#cnn">CNN</a></li>
+                                <li><a href="#lstm">LSTM</a></li>
+                            </ul>
+                        </li>
+                        
+                    </ul>
+                </li>
+                <li><a href="page_three.html#test">Test</a>
+                <li><a href="page_three.html#contact">Contact</a>
+            </ul>
+    
+        </nav>
+    </header>
+    
+    
+    
+
+    
+    <section class="dl_corr" id="dl_corr">
+        
+        <div class="motivation2">
+            <h1>Deep Learning for correlation</h1>
+            <h2>Motivation</h2>
+            <p class="motivation3" id="motivation3">Intensity interferometry is part of optical interferometry, which provides a sub-milliarcsecond resolution of astronomical objects. 
+                In intensity interferometry one correlates intensities of optical fluxes rather than amplitudes of waves.
+               For a successful measurement one needs a large light collecting
+               area for several telescopes separated
+               by hundreds of meters and good time resolution of the intensity flux.
+               Air Cherenkov telescopes, e.g., H.E.S.S. are a natural candidate for performing such a measurement.
+               One of the important tasks is to determine the rate of photons hitting the PMTs to calculate expectations on the signal-to-noise ratio.
+               For low rates, the individual pulses can be resolved and counted,
+               but for high rates, relevant for the IACTs, the pulses from the photons overlap.
+               We use different neural network algorithms in order to determine the rate
+               of photons hitting the PMT, including the high rates.
+            </p>
+
+            <p class="history" id="history">
+                Machine learning methods can provide predictive models to solve complex problems either
+with simulated or measured data, using classification or regression approach. In the last
+decade, DL has been extensively used to solve various problems such as Natural Language
+processing [1],
+ speech recognition [2]
+  and Computer Vision [3,4,5].
+Especially, Computer Vision methods have been used thoroughly in physics [6; 7].
+In this work, we focused on various types of DL models such as Convolutional Neural
+Network (CNN), Long-Short Term Memory Unit (LSTM) and Gated Recurrent Unit (GRU)
+in order to determine the photon rates detected by PMTs. We compared the results with more traditional methods of estimating the photon rate: peak-finding method from scipy6
+library and charge integration [8; 9].
+ The peak finding method provides good results
+at low rates and underestimates the number of photons at high rates, when many peaks are
+overlapping.
+            </p>
+        </div>
+
+
+        <article class="ele_nn">
+            <h2>Elements of Neural Networks</h2>
+            <article class="mlp">
+                <h3>Neural Network</h3>
+                <p>Neural networks are made up of neurons, and these neurons are arranged in such a way
+                    that they create layer like structure, in which each neurons has connection with previous
+                    layer neurons and next layer neurons. These neurons have characteristic of computation
+                    of input information and outputting result of these computations. Each computation includes two extra parameters, known as weight and bias, which determine the strength of
+                    connection with previous or next layer. Thus, fist
+                    weight matrix is used for first layer, and out from first layer is used as input for next layer
+                    with which again new weight matrix is initialized and used in universal approximation
+                    of second layer. Similarly for deeper network, one-by-one layer use their respective initialized weight matrix for the calculation of feature importance.</p>
+            </article>
+            <article class="mlp">
+                <h3>Optimizer</h3>
+                <p>With the help of BP algorithm NNs calculate the required gradient for weight updates, but
+                    do not specify the way of their use in order to implement update of weights. Optimizers
+                    fullfils this requirement. There are various gradient based learning-algorithms.</p>
+            </article>
+            <article class="mlp">
+                <h3>Loss function</h3>
+                <p>Loss function is the function which compares by mapping an output values of model with
+                    truth values, which is further used for optimisation of model parameters. In general, one
+                    might need to maximize or minimize the loss function according to nature of function
+                    used. Once the loss function is calculated, the closeness of the NN predictions must be
+                    estimated, here helps the maximum likelihood function. Advantage of maximum likelihood is that with the number of training examples the model prediction improves, and
+                    this property is known as "Consistency". Though, this is helpful for the case of NNs till
+                    certain point, after that all what depends is the selection of model architecture, loss optimizers and hyperparameter tuning. Selection of loss function is related to activation function
+                    of last layer.</p>
+            </article>
+        </article>
+    </section>
+
+
+
+
+
+    <section class="nns" id="nns">
+        <h1>Different types of Neural Networks</h1>
+        <div class="Fully connected Neural Network">
+            <h2>Deep Neural Network</h2>
+            <img src="https://thumbs.gfycat.com/SeparateFrayedChafer-max-1mb.gif" alt="">
+
+            <div class="text" id="text">
+                Fully Connected Neural Networks are the simplest neural networks, which consist of layers of neurons working on basic principle. In it each of the neurons from one ´layer is
+connected to each of the neurons of other neurons., In this way it forms fully connected architecture. This proliferates number of parameters of the network, which sometimes cause
+overfitting. The improvisation of prediction requires optimisation of parameters, which is possible by
+use of Back-propagation algorithm(BP). It simply calculates partial derivatives of C with respect to θ and determines required updates in θ for minimization of C. Since intermediate
+quantities such as activation(output of nodes) has influence on final prediction. Thus, one
+needs to consider them in recursive calculation of partial derivatives of C with respect to
+θ. This is the basic idea of BP in NNs.
+            </div>
+        </div>
+
+        <div class="cnn">
+            <h2>Convolutional Neural Network</h2>
+            <img src="https://miro.medium.com/max/1280/1*h01T_cugn22R2zbKw5a8hA.gif" alt="">
+
+            <div class="text" id="text2">
+                In general, convolution is a mathematical operation applied on two functions and the result of this implementation gives third function, which determines that how shape of one
+function depends on other function’s shape. Neural network which simply uses "Convolution" instead of matrix multiplication is known as Convolutional Neural Networks(CNN).
+Until the 1960s and 1970s, NNs were just simple connections of neurons which pass
+the information by getting activated, and depending on the problem and the NN connection, the computing process was done in different stages. Also during this time for
+supervised learning, efficient gradient descent method was used and backpropagation(BP)
+was developed in order to achieve optimization in training in both SL and UL3
+, which
+was found very difficult in practice in 1980 but applied first time in 1981, and by the
+1990 it became an explicit research subject. BP works on simple concept of chain rule[17]
+applied on parameter space with iterations which results Steepest descent[18]. 
+Also, in
+case of time series prediction and sequence classification, BP plays vital role[19]. 
+In 1979,
+Kunihiko Fukushima proposed an idea of multi-layer hierarchical neural network for pattern recognition and handwritten digit recognition, which was known as Neocognitron
+NN and became inspiration for CNNs later on[20].
+
+            </div>
+        </div>
+
+        <div class="lstm" id="lstm">
+                <h2>Lont-Short term Memory Unit(LSTM)</h2>    
+                <div class="text" id="text3">
+                    First it takes input sequences and process them and store some information in
+memory called hidden state. It passes this stored information to next time cell. Now in
+next cell, information obtained from previous cell’s hidden state and input information of
+present cell get added in the form of vector. Thus, formed vector has information of previous state and current input. Now, this vector is scaled in tanh function which is simply the
+memory(calculated hidden state) of present state. Benefit of tanh function is that is results values in between -1 and +1, instead of exploding values by multiplications. This is how
+RNN works. LSTM cell has the similar working principle, but with much more complicated mathematical operations, which allows LSTM to keep relevant information and forget irrelevant
+ones. In the heart of computations in LSTM are calculation of cell state and gates. One can
+consider cell state as a highway, which passes important information in entire sequence,
+which means information from earlier states are also used by last states in sequence, and
+helps in reduction of short-term memory. Through-out the sequence, information gets added into cell states by gated calculations in cells of sequence. In gates sigmoid activation
+is used, which scales information from 0 to 1, which is helpful to extract information to
+forget. Because information multiplied with closer to 1 gets more importance while information multiplied by closer to 0 gets less importance. Basically, LSTM cells have three
+different gates, forget gate, input gate and output gate.
+
+    
+                </div>
+        </div>
+    </section>
+    
+
+
+
+
+    <section class="ala_asp" id="ala_asp">
+        <h2>An explaination of Intensity Interferometry by Nobel laureate</h2>
+        <iframe id="map" src="https://www.youtube.com/embed/7R2Ehcvdxmg&t=1564s&ab_channel=InstitutdesHautes%C3%89tudesScientifiques%28IH%C3%89S%29" width="700" height="500"></iframe>
+    </section>
+
+
+
+    <footer class="footer">
+        <h2>References</h2>
+        <ol>
+
+            <li><p>
+                Sutskever, I. et al.: Sequence to Sequence Learning with Neural Networks. In:
+Advances in Neural Information Processing Systems. Vol. 27, Curran Associates,
+Inc., 2014.
+                </p>
+            </li>
+
+            <li><p>
+                Hinton, G. et al.: Deep Neural Networks for Acoustic Modeling in Speech Recog-
+nition: The Shared Views of Four Research Groups. IEEE Signal Processing
+Magazine 29/6, pp. 82–97, 2012.
+                </p>
+            </li>
+
+            <li><p>
+                He, K. et al.: Deep Residual Learning for Image Recognition. In: 2016 IEEE
+Conference on Computer Vision and Pattern Recognition (CVPR). Pp. 770–778,
+2016.
+                </p>
+            </li>
+
+            <li><p>
+                LeCun, Y.; Bengio, Y.; Hinton, G.: Deep learning. Nature 521/7553, pp. 436–
+444, May 2015.
+                </p>
+            </li>
+
+            <li><p>
+                Sutskever, I. et al.: ImageNet Classification with Deep Convolutional Neural
+Networks. In: Advances in Neural Information Processing Systems. Vol. 25,
+Curran Associates, Inc., 2012.
+                </p>
+            </li>
+
+            <li><p>
+                Chianese, M. et al.: Differentiable strong lensing: uniting gravity and neural
+nets through differentiable probabilistic programming. Monthly Notices of the
+Royal Astronomical Society 496/1, pp. 381–393, May 2020.
+                </p>
+            </li>
+
+            <li><p>
+                Pasquet-Itam, J.; Pasquet, J.: Deep learning approach for classifying, detecting
+                and predicting photometric redshifts of quasars in the Sloan Digital Sky Survey
+                stripe 82. A&A 611/, A97, 2018.
+                </p>
+            </li>
+
+            <li><p>
+                <a href="https://ecap.nat.fau.de/wp-content/uploads/2022/03/2021_Bhanderi_MA_thesis.pdf" target="_blank" rel="noopener" aria-label="Measurement of the diameter of orionis with the interferometer">
+                    Photon flux calculation using Deep Learning.
+                    </a>
+                </p>
+            </li>
+            
+            <li><p>
+                Zmija, A. et al.: Optical intensity interferometry lab tests in preparation of
+stellar diameter measurements at IACTs at GHz photon rates. Monthly Notices
+of the Royal Astronomical Society 509/3, pp. 3113–3118, Oct. 2021.
+
+                </p>
+            </li>
+
+            <li><p>
+                D. S, ‘The numerical solution of variational problems.’, Journal of Mathematical Analysis andApplications,,
+vol. 5, no. 1, pp. 30–45, 1962.
+
+                </p>
+            </li>
+
+            <li><p>
+                K. J. Henry, ‘Gradient theory of optimal paths’, ARS Journal, 1960.
+
+                </p>
+            </li>
+
+
+            <li><p>
+                <a href="https://arxiv.org/abs/404.7828%20v4" target="_blank" rel="noopener" aria-label="Measurement of the diameter of orionis with the interferometer">
+                    J Schmidhuber, ‘Deep Learning in Neural Networks: An Overview:’ ArXiv e-prints, 2014. arXiv: 404.
+7828v4 [cs.NE].
+
+                    </a>
+                </p>
+            </li>
+
+
+            <li><p>
+                Y. H. G. LeCun Yann; Bengio, ‘Deep learning’, Nature, vol. 521, no. 7553, pp. 436–444, 2015
+
+                </p>
+            </li>
+
+
+
+        </ol>
+       
+        <p>Copyright © Intensity Interferometry 2023</p>
+    </footer>
+
+
+
+
+
+    
+    
+    
+    
+
+
+</body>
+</html>
