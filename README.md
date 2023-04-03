@@ -5,9 +5,8 @@ This web application development project is a part of the course requirement of 
 The project delivers additional informnation such as __historical development__ in intensity interferometry and _general information about neural networks_. Further, user can also get to know about different type of experiments(telescopes) actively used for research in interferometry, and __instruments__ and __procedure__ for intensity interferometry.
 In the first page website of Erlangen Center for Astorparticlephysics is embedded, where I have performed experiments. ON the second page the link to a lecture by Prof. Alain Aspekt on Hanbury-Brown-Twiss intensity interferometry is embedded.
 
-| Intensity Interferometry | Neural Networks |
-| --- | --- |
-| ![alt text](css/img-1.png) | ![alt text](css/img-2.png) |
+ Intensity Interferometry 
+ ![alt text](css/img-2.png)
 |<table><tr><td>![alt text](css/img-4.png)</td>  <td>![alt text](css/img-3.png)</td></tr></table> | ![alt text](css/img-5.png) |
 | ![alt text](css/img-7.png) | ![alt text](css/img-8.png) |
 
